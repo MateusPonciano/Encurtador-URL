@@ -1,6 +1,9 @@
 from django.conf.urls import url
-from .views import indexView
+from .views import IndexView, Encurtar, LinkView
+from .models import Url
 
 urlpatterns = [
-    url(r'^$', indexView.as_view())
+    url(r'^encurtar$', Encurtar.as_view(), name='encurtar' ),
+    url(r'(?P<code>.*)^$', LinkView.as_view()),
+    url(r'^$', IndexView.as_view(model=Url, success_url='/encurtador/encurtar'))
 ]

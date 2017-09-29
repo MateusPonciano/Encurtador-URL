@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+  </head>
+
+    <body>
+    <div class="container">
+        <h1>Url curta!</h1>
+        <form action="encurtar" method="post">
+        <ul>
+          url original: {{ url_name }}
+          <p>url nova: <a href="/encurtador/?P{{ code }}"> /encurtador/?P{{ code }} </a></p>
+          <p><a href="/encurtador"> Voltar </a></p>
+
+        </ul>
+    </div>
+    </body>
+</html>

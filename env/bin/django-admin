@@ -1,4 +1,4 @@
-#!/home/mateus/teste-intelivix/encurtadorURL/env/bin/python2
+#!/home/mateus/teste-intelivix/encurtadorURL/env/bin/python3
 
 # -*- coding: utf-8 -*-
 import re

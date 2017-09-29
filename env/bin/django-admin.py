@@ -1,4 +1,4 @@
-#!/home/mateus/teste-intelivix/encurtadorURL/env/bin/python2
+#!/home/mateus/teste-intelivix/encurtadorURL/env/bin/python3
 from django.core import management
 
 if __name__ == "__main__":

@@ -5,7 +5,8 @@ from django.db import models
 
 # Create your models here.
 class Url(models.Model):
-    url_name = models.URLField()
+    url_name = models.URLField(unique=True)
+    code = models.IntegerField(default=0, unique=True)
 
 '''
     def encurtar(url):
