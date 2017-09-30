@@ -9,6 +9,7 @@ from .models import Url
 import numpy as np
 from django.core.exceptions import ObjectDoesNotExist
 from django.views.generic.detail import SingleObjectMixin
+from django.shortcuts import redirect
 # Create your views here.
 
 class IndexView(FormView):
@@ -39,9 +40,9 @@ class Encurtar(View):
 
 class LinkView(SingleObjectMixin, View):
     model = Url
-    slug_field = 'code'
 
     def get(self, request, code):
-        self.get_queryset =
-        self.object = self.get_object(queryset='code')
-        return HttpResponse(self.object)
+        short_code = request.GET.get('code')
+        url = Url.objects.get(code=short_code)
+
+        return redirect(url.url_name)
