@@ -12,7 +12,7 @@
         <form action="encurtar" method="post">
         <ul>
           <li> Url original: {{ url_name }} </li>
-          <li> Url nova: <a href="/encurtador/?code={{ code }}"> /encurtador/?code={{ code }} </a></li>
+          <li> Url nova: <a href="/encurtador/?code={{ code }}" target="_blank"> /encurtador/?code={{ code }} </a></li>
         </ul>
         <p>{% bootstrap_button "Voltar" button_type=link href='/'%}</p>
 </div>
