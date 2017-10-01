@@ -5,8 +5,7 @@ Encurtador de URL desenvolvido com Django
 -----
 
 1. Para executar o encurtador clone o repositório
-
-  ..* git clone https://github.com/MateusPonciano/encurtadorURL.git
+..* git clone https://github.com/MateusPonciano/encurtadorURL.git
 
 2. Entre no diretório
 
