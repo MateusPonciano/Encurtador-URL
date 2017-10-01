@@ -10,6 +10,7 @@ import numpy as np
 from django.core.exceptions import ObjectDoesNotExist
 from django.views.generic.detail import SingleObjectMixin
 from django.shortcuts import redirect
+from django.views.generic.list import ListView
 # Create your views here.
 
 class IndexView(FormView):
@@ -46,3 +47,7 @@ class LinkView(SingleObjectMixin, View):
         url = Url.objects.get(code=short_code)
 
         return redirect(url.url_name)
+
+class ListUrls(ListView):
+    model = Url
+    template_name = 'list_url.html'

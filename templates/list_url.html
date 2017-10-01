@@ -1,0 +1,18 @@
+{% block content %}
+    <h1>Url List</h1>
+
+    {% if url_list %}
+    <ul>
+
+      {% for url in url_list %}
+      <li>
+        {{ url.url_name }} -> <a href="{{ "/encurtador/?code=" }}{{url.code}}"> {{ "ecurtador/?code=" }}{{url.code}} </a>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no urls in the library.</p>
+    {% endif %}
+      <p><a href="/"> Voltar </a></p>
+{% endblock %}
