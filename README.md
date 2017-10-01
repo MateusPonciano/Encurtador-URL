@@ -6,15 +6,9 @@ Encurtador de URL desenvolvido com Django
 
 1. Para executar o encurtador clone o repositório
   * git clone https://github.com/MateusPonciano/encurtadorURL.git
-
 2. Entre no diretório
-
-  cd encurtadorURL
-
+  * cd encurtadorURL
 3. Instale os requisitos
-
-  pip install -r requirements.txt
-
+  * pip install -r requirements.txt
 3. Inicie o servidor
-
-  python3 manage.py runserver
+  * python3 manage.py runserver
