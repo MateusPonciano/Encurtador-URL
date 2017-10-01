@@ -26,7 +26,8 @@ SECRET_KEY = 'an_kcay@$)7pio$yv3&^!jx4f1)4=#^rlb9^ve#ix3*_hat)q+'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'encurtador-url.herokuapp.com'
+    'encurtador-url.herokuapp.com',
+    'localhost'
 ]
 
 

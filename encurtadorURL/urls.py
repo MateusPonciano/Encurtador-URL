@@ -15,8 +15,11 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from encurtador.views import IndexView
+from encurtador.models import Url
 
 urlpatterns = [
     #url(r'^admin/', admin.site.urls),
-    url(r'^encurtador/', include('encurtador.urls', namespace='encurtador'))
+    url(r'^encurtador/', include('encurtador.urls', namespace='encurtador')),
+    url(r'^$', IndexView.as_view(model=Url, success_url='/encurtador/encurtar'))
 ]

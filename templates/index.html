@@ -7,7 +7,7 @@
     <body>
     <div class="container">
         <h1>Encurtador Url</h1>
-        <form action="encurtar" method="post">
+        <form action="encurtador/encurtar" method="post">
           {% csrf_token %}
           {{ form.as_p }}
           <input type="submit" class="btn btn-info" value="Obter nova url" />
