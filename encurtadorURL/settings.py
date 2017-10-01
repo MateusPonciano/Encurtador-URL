@@ -25,7 +25,9 @@ SECRET_KEY = 'an_kcay@$)7pio$yv3&^!jx4f1)4=#^rlb9^ve#ix3*_hat)q+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'encurtador-url.herokuapp.com'
+]
 
 
 # Application definition
