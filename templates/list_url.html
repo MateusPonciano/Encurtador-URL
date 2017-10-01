@@ -1,18 +1,38 @@
+<!DOCTYPE html>
+{% extends 'bootstrap3/bootstrap3.html' %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% block bootstrap3_title %}EncurtadorUrl{% endblock %}
+
+{% block bootstrap3_content %}
 {% block content %}
-    <h1>Url List</h1>
+<div class="container" id="main">
+    <h1>{% block title %} Lista de urls {% endblock %}</h1>
 
     {% if url_list %}
-    <ul>
 
+<div class="container" id="main">
       {% for url in url_list %}
-      <li>
-        {{ url.url_name }} -> <a href="{{ "/encurtador/?code=" }}{{url.code}}"> {{ "ecurtador/?code=" }}{{url.code}} </a>
+
+    <ul class="list-inline">
+      <li class="list-inline-item">
+        {{ url.url_name }}
       </li>
-      {% endfor %}
+      <li class="list-inline-item">
+        <a href="{{ "/encurtador/?code=" }}{{url.code}}"> {{ "ecurtador/?code=" }}{{url.code}} </a>
+      </li>
 
     </ul>
+      {% endfor %}
+
+
     {% else %}
-      <p>There are no urls in the library.</p>
+      <p>Nenhuma url salva</p>
     {% endif %}
-      <p><a href="/"> Voltar </a></p>
+    <p>{% bootstrap_button "Voltar" button_type=link href='/'%}</p>
+  </div>
+</div>
+
+{% endblock %}
 {% endblock %}

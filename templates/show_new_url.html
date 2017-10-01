@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <head>
-      <meta charset="utf-8">
-  </head>
+{% extends 'bootstrap3/bootstrap3.html' %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 
-    <body>
-    <div class="container">
-        <h1>Url curta!</h1>
+{% block bootstrap3_title %}EncurtadorUrl{% endblock %}
+{% block bootstrap3_content %}
+{% block content %}
+<div class="container" >
+    <h1>{% block title %} Nova Url {% endblock %}</h1>
         <form action="encurtar" method="post">
         <ul>
-          url original: {{ url_name }}
-          <p>url nova: <a href="/encurtador/?code={{ code }}"> /encurtador/?code={{ code }} </a></p>
-          <p><a href="/"> Voltar </a></p>
-
+          <li> Url original: {{ url_name }} </li>
+          <li> Url nova: <a href="/encurtador/?code={{ code }}"> /encurtador/?code={{ code }} </a></li>
         </ul>
-    </div>
-    </body>
-</html>
+        <p>{% bootstrap_button "Voltar" button_type=link href='/'%}</p>
+</div>
+
+
+{% endblock %}
+{% endblock %}

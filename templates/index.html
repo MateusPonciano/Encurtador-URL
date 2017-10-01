@@ -1,3 +1,10 @@
+{% extends 'bootstrap3/bootstrap3.html' %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+
+{% block bootstrap3_title %}EncurtadorUrl{% endblock %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,14 +12,37 @@
   </head>
 
     <body>
-    <div class="container">
-        <h1>Encurtador Url</h1>
-        <form action="encurtador/encurtar" method="post">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <input type="submit" class="btn btn-info" value="Obter nova url" />
-        </form>
-        <p><a href="/encurtador/list"> Listar urls já encurtadas </a></p>
+    {% block bootstrap3_content %}
+    <div class="form-group">
+    <div class="container" id="main">
+      <h1> {% block title %} Encurtador Url {% endblock %} </h1>
+      {% block content %}
+        <div class="container" id="form">
+            <form action="encurtador/encurtar" method="post">
+              {% csrf_token %}
+              {% bootstrap_form_errors form type='non_fields' %}
+              {% bootstrap_field form.url_name layout='horizontal' show_label=False%}
+
+              <center>
+                <div class="row">
+                  <div class="col-lg-8 mx-auto">
+                <ul class="list-inline">
+                  <li class="list-inline-item">
+
+                    <p> {% buttons submit='Encurtar!' %}{% endbuttons %}
+                  </li>
+                <li class="list-inline-item">
+                     {% bootstrap_button "Listar urls encurtadas" button_type=link href='encurtador/list' value='Listar'%}
+                </li>
+              </ul>
+            </div>
+
+              </div>
+            </form>
+        </div>
+      {% endblock %}
+      {% endblock %}
     </div>
+  </div>
     </body>
 </html>
