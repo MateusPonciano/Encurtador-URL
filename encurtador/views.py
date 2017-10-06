@@ -35,7 +35,7 @@ class Encurtar(View):
             try:
                 url = Url.objects.get(url_name=request.POST['url_name'])
             except ObjectDoesNotExist:
-                print("Either the entry or blog doesn't exist.")
+                print("Url Does Not Exist")
 
         return render(request, self.template_name, {'url_name': url.url_name, 'code': url.code, 'pk': url.id})
 
